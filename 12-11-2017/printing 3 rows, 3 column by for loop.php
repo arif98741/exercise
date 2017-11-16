@@ -1,4 +1,4 @@
-<?php //3row , 3column table by for loop                  ?>
+<?php //3row , 3column table by for loop                           ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
