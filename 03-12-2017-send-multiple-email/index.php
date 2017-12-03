@@ -3,33 +3,8 @@ $msg = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $con = new mysqli("localhost", "root", "", "multiple_email");
     $subject = "HTML email";
-    $message = "
-                <html>
-                <head>
-                        <title>HTML email</title>
-                </head>
-                <body>
-                    <p>This email contains HTML Tags!</p>
-                <table>
-                    <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                    </tr>
-                    <tr>
-                        <td>John</td>
-                        <td>Doe</td>
-                    </tr>
-                </table>
-                </body>
-                </html>";
-
-// Always set content-type when sending HTML email
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-// More headers
-    $headers .= 'From: <webmaster@example.com>' . "\r\n";
-    $headers .= 'Cc: myboss@example.com' . "\r\n";
+    $message = "You have successfully got email go here https://phpdark.com/jewel";
+    $header = "From: <webmaster@phpdark.com>" . "\r\n";
 
 
     if ($con) {
@@ -37,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt) {
             $i = 0;
             while ($row = $stmt->fetch_assoc()) {
-                mail($row['email'], $subject, $message, $headers);
+                mail($row['email'], $subject, $message, $header);
                 $i++;
             }
         }
@@ -100,6 +75,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php if ($msg != ''): ?>
                     <?php echo $msg . "<br/>"; ?>
                 <?php endif; ?>
+                <h2>All Codes Are Available Here <a href="https://github.com/arif98741/exercise/commit/2155544d1e5d4cc4387e2348c0b7ee18904c4942">Multiple Email</a></h2>
+                <h3>Change database, user,pass etc for refreshed code</h3>
+
 
             </section>
             <?php
