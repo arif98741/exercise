@@ -107,6 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <section class="footeroption">
                 <h2>www.phpdark.com</h2>
             </section>
+
         </div>
     </body> 
 </html>
