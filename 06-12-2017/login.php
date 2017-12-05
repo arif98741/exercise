@@ -6,8 +6,6 @@ if (isset($_SESSION['login'])) {
     }
 }
 
-
-
 include_once 'connection.php';
 $con = connection();
 $msg = '';
