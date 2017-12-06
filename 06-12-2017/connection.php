@@ -1,7 +1,6 @@
 <?php
 
 function connection() {
-
     try {
         $con = new mysqli("localhost", "root", "", "test");
         if ($con) {
