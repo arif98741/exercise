@@ -1,5 +1,6 @@
 <?php include 'header.php'; ?>
 <?php include 'helper.php'; ?>
+
 <style>
     table{
         width:100%;
@@ -18,6 +19,7 @@
         background: #D9DEBA;
 
     }
+    a{text-decoration: none;}
 </style>
 <div class="phpdarkcoding">
     <section class="headeroption">
@@ -26,6 +28,14 @@
 
     <section class="mainoption">
         <h1 class="success">Add Member</h1>
+        <?php if(isset($_GET['action']) && $_GET['action']=='delete'){
+           $id = $_GET['id'];
+           $delStmt = connection()->query("delete from member where id ='$id'");
+           if($delStmt)
+                echo "<span class='success'>Data Deleted Successful!</span>";
+            else
+                echo "<span class='warning'>Delete Failed!</span>";
+        } ?>
         <hr/>
         <div class="contentoption">
             <div class="view_member">
@@ -36,6 +46,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Address</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,6 +62,7 @@
                                     <td><?php echo $row['name']; ?></td>
                                     <td><?php echo $row['email']; ?></td>
                                     <td><?php echo $row['address']; ?></td>
+                                    <td><a href="update.php?action=edit&id=<?php echo $row['id']; ?>">E</a> | <a href="?action=delete&id=<?php echo $row['id']; ?>">D</a></td>
 
                                 </tr>
                                 <?php
@@ -65,6 +77,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Address</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                 </table>
