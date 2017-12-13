@@ -19,6 +19,7 @@
 						},
 						method:'post',
 						success:function(data){
+							console.log(data);
 							$('.message').html(data);
 						},error:function(){
 
