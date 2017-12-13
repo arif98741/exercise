@@ -1,18 +1,21 @@
+<?php include 'header.php'; ?>
+<div class="phpdarkcoding">
+    <section class="headeroption">
+        <h2>PHP Login System</h2>
+    </section>
 
-<?php
+    <section class="mainoption">
+        <h1 class="success">Realtime Search</h1>
+        <h3 class="success">From Here Seach Your Query</h3>
+        <hr/>
+        <div class="contentoption">
+            <input type="text" placeholder="Enter Email or Phone" id="searchbar">
+           <br/>
 
-$x = "Ariful Islam";
-if ($x > 5) {
-    if (filter_var(FILTER_VALIDATE_EMAIL)) {
-        if (FILTER_VALIDATE_FLOAT) {
-            echo "nothing";
-        } else {
-            echo "invalid float number";
-        }
-    } else {
-        echo "Invalid Email";
-    }
-} else {
-    echo "not done";
-}
-?>
+           <div class="message">
+              
+           </div>
+        </div>
+
+    </section>
+    <?php include 'footer.php'; ?>
