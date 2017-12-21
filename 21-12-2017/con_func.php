@@ -26,7 +26,8 @@ if($stmt){ //if execute successfully then go inside
     if($row>0){ //greater then zero means we have got minimum 1 row data
       //we will print data now
       $data = $stmt->fetch_assoc(); //we got data in format of array. now we will print
-       echo $data['name']; //here name is a column of user table in test database.
+       echo $data['name']; //here name is a column of user table in test databasee
+       echo "<br/>";
     }else{ //else condition will run when if condition becomes false;
        echo "No Data Found";
     }
