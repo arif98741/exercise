@@ -45,7 +45,7 @@
                     <input type="text"  name="email" placeholder="Enter Email" class="insert"><br/>
                     <input type="text"  name="address" placeholder="Enter Address" class="insert"><br/>
                     <input type="submit" value="Save" name="addmember" class="save_member_btn"><br/>
-
+					
                 </form>
             </div>
 
