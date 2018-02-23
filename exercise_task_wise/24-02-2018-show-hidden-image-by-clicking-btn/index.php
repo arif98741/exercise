@@ -29,14 +29,13 @@
 				<img src="background1.jpeg" alt="" class="img-thumbnail" />
 			</div>
 			
-			
 		</div>
 		
 		
 		
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script >
+	<script>
 	
 		$(document).ready(function(){
 			$("#action_btn").click(function(){
