@@ -11,23 +11,24 @@
 	</style>
 </head>
 <body>
-	<div class="container" style="max-width: 500px;">
+	<div class="container" >
 		<div class="row" style="margin-top:100px; margin-bottom: 30px;">
 			<button class="btn btn-primary" id="action_btn">Click</button>
 		</div>
 		<div class="row">
-			<div class="col-md-4 box" >
+			<div class="col-md-3 box" >
 				<img src="background1.jpeg" alt="" class="img-thumbnail" />
 			</div>
-			<div class="col-md-4 box">
+			<div class="col-md-3 box">
 				<img src="background1.jpeg" alt="" class="img-thumbnail" />
 			</div>
-			<div class="col-md-4 box">
+			<div class="col-md-3 box">
 				<img src="background1.jpeg" alt="" class="img-thumbnail" />
 			</div>
-			<div class="col-md-4 box">
+			<div class="col-md-3 box">
 				<img src="background1.jpeg" alt="" class="img-thumbnail" />
 			</div>
+			
 			
 		</div>
 		
