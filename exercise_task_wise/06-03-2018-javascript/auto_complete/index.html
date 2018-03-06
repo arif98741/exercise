@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML Auto Complete</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<style>
+		input{
+			font-size: 19px; 
+		}
+		.form_input,.sugession{
+			margin: 0 auto;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="container wrapper">
+		
+		<div class="col-md-8 form_input" >
+			<h3>Auto Complete Task</h3>
+			<div class="form-group">
+				<form action="">
+					<input type="text" class="form-control form_box">
+				</form>
+				<p class="show"></p>
+			</div>
+		</div>
+
+		<div class="col-md-8 sugession " >
+			
+		</div>
+
+
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    	$(document).ready(function () {
+    		let data = {
+    			"name" : "Ariful Islam",
+    			"education" : {
+    				"school" :{
+    					"high_school" : {
+    						"name" : "Ful Govt. Primary School",
+    						"location" : "Dhaka, Elinbag,Tangail",
+    						"Duration" : "5 years"
+    					},
+    					"primary_school" : {
+    						"name" : "Ful High School",
+    						"location" : "Ful, Ela, hati, ail",
+    						"Duration" : "5 years",
+    						"GPA" : "4.75"
+    					}
+    				},
+    				"college" :{
+    					"name" : "l ent Puc School and College",
+						"location" : "GBD, Tangail",
+						"Duration" : "2 years",
+						"GPA" : "4.70"
+    				},
+    				"university" :{
+    					"name" : "ABC university",
+						"location" : "Dhaka, Savar",
+						"Duration" : "4 years",
+						"GPA" : "studying now"
+    				}
+
+    			},
+    			"address" : {
+    				"permanent_address" : {
+    					"village": "Ful",
+	    				"post": "F/Kedarnath",
+	    				"PS": "Khamarbari",
+	    				"Dist": "Tangail"
+    				},
+    				"present_address" : {
+    					"village": "Daa",
+	    				"post": "Cbag",
+	    				"PS": "Asua",
+	    				"Dist": "Dka"
+    				}
+    				
+    			},
+    			"contact": {
+    				"email" : {
+	    				"email1" : "abcg@gmail.com",
+	    				"email2" : "arif@gmail.com",
+	    				"email3" : "kho@gmail.com"
+    				},
+    				"mobile":{
+    					"contact1" : "01750-XXYYZZ",
+	    				"contact2" : "01752-PPOOAA",
+	    				"contact3" : "01931-EERRCC"
+    				}
+    			},
+    			"skill": {
+    				"basic_skill" : {
+	    				"software" : ["Microsoft Office","Adobe Photoshop","Adobe  Illustrator"]
+    				},
+    				"programming_language":{
+    					"basic" : ["C","Fortran"],
+	    				"developement" : ["Java","PHP"],
+	    				"web" : ["HTML","CSS3","JavaScript"]
+    				},
+    				"database_management":{
+    					"basic" : ["MySQL","Oracle","SQLite","NoSQL","MongoDB"]
+    				}
+    			},
+
+    			"interest" : {
+    					"reading" :["comics","journal","History"],
+    					"writing" :["novel","poem"]
+
+    			}
+    			
+    		}
+
+    		
+			var value = $(this).val();
+			console.log(data);
+    		
+    	});
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+body{font-family: verdana}
+.phpdarkcoding{width: 900px;margin: 0 auto; background: #ddd;}
+.headeroption, .footeroption{background: #444;color: #fff; text-align: center;padding: 20px;}
+.headeroption h2, .footeroption h2{margin: 0}
+.mainoption{min-height: 420px;padding: 20px}
+.contentoption{min-height: 100px;padding: 20px; width: 100%;}
+.member_addition{ max-width: 400px; margin: 0 auto; }
+.view_member{
+    max-width: 90%;
+    margin: 0 auto;
+}
+.view_member.table{
+    width: 100%;
+}
+.insert{
+    padding: 8px;
+    margin-top: 4px;
+    width: 200px;
+    height: 26px;
+}
+.save_member_btn{
+    width: 100px;
+    /* margin: 0 auto; */
+    height: 36px;
+    font-size: 18px;
+    margin-top: 6px;
+}
+.option{width:33%; float: left;}
+.option h4{}
+.option h4 a{    
+    text-decoration: none;
+    font-size: 27px;
+    border: 1px solid black;
+    padding: 26px;
+    background: #e2dbdb;
+    color: #654646;
+}
+.option h4 a:hover{    
+    border: 1px solid black;
+    padding: 26px;
+    background: #654646;
+    color: #e2dbdb;
+    transition: .4s;
+}
+
+.myform{width: 500px; border: 4px solid  #999;margin: 0 auto; padding: 10px 20px 20px;}
+form{padding:25px; font-size: 100%;}
+input[type="submit"],input[type="file"]{cursor: pointer};
+input[type="text"]{cursor: pointer; font-size: 17px; font-weight: bold; }
+input[type="file"]{width:100px; padding: 5px;}
+.warning{font-size: 18px; color: red;}
+.success{font-size: 18px; color: green;}
+img{width:150px; height: 170px; top: 100px; left: 100px; }
+.message{margin:0 auto;}
+.back{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 6px;
+    background: goldenrod;
+    color: #fff;
+    margin: 18px;
+}
+.floatleft{float: left}
+.floatright{float: right}
+.initial{}
+.data{}
+.file{
+    text-align: center;
+    font-family: "Times New Roman";
+    font-style: italic;
+    font-size: 20px;
+}
