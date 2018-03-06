@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($stmt->num_rows > 0) {
                 //assiging session for getting logged user data instantly
                 $_SESSION['login'] = true;
-
                 $_SESSION['username'] = $data['username'];
                 $_SESSION['name'] = $data['name'];
                 $_SESSION['address'] = $data['address'];
@@ -54,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <section class="mainoption">
                 <div class="myform">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form action="" method="post" >
                         <table>
                             <tr>
                                 <td>Username</td>
