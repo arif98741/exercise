@@ -1,0 +1,19 @@
+problems:
+
+Doctor nav bar
+
+*LOGIN HERE is different
+*Footer change 
+
+
+Admin Page
+*Add Administrator is not working
+*Add User is not working
+
+Patient
+*Add patient error occurs during save.
+*Add complaints is not working
+
+Appointment
+*Appointment is connected to the database.
+*Department should have view appointments
