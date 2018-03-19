@@ -1,1 +1,2 @@
 http://apidev.accuweather.com/developers/best-practices
+nothing
