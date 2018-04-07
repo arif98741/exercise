@@ -1,0 +1,173 @@
+/*User Role Table */
+CREATE TABLE userrole(
+    ID int(5),
+    name varchar(50),
+    PRIMARY KEY(ID)
+    
+);
+
+/* User Table */
+CREATE TABLE users(
+	ID int(5) not null AUTO_INCREMENT,
+    name varchar(100),
+    username varchar(100),
+    email varchar(100),
+    password varchar(32),
+    contact varchar(20),
+    userrole int(5),
+    PRIMARY KEY(ID),
+    FOREIGN KEY(userrole) REFERENCES userrole(ID)
+   
+);
+
+/* Category Table */
+CREATE TABLE category(
+    ID int(11) not null AUTO_INCREMENT,
+    name varchar(100),
+    created_at timestamp not null,
+    updated_at timestamp,
+    PRIMARY KEY(ID)
+   
+);
+
+
+/* Sub Category Table */
+CREATE TABLE subcategory(
+    ID int(5) not null AUTO_INCREMENT,
+    name varchar(100),
+    category int(11),
+    created_at timestamp not null,
+    updated_at timestamp,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(category) REFERENCES category(ID)
+   
+);
+
+/* Company Table */
+CREATE TABLE company(
+    ID int(5) not null AUTO_INCREMENT,
+    name varchar(100),
+    contact1 varchar(20),
+    contact2 varchar(20),
+    email1 varchar(100),
+    email2 varchar(100),
+    address timestamp not null,
+    created_at timestamp,
+    PRIMARY KEY(ID)
+);
+
+/* Products Table */
+CREATE TABLE products(
+    ID int(5) not null AUTO_INCREMENT,
+    name varchar(100),
+    category int(11),
+    subcategory int(11),
+    company int(11),
+    invoice_price float(8,2),
+    retail_price float(8,2),
+    created_at timestamp,
+    updated_at timestamp,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(category) REFERENCES category(ID),
+    FOREIGN KEY(subcategory) REFERENCES subcategory(ID),
+    FOREIGN KEY(company) REFERENCES company(ID)
+);
+
+
+/* Sells Table */
+CREATE TABLE sells(
+    ID int(5) not null AUTO_INCREMENT,
+    customer int(11),
+    quantity float(11),
+    total_price float(8,2),
+    paid float(8,2),
+    due float(8,2),
+    created_at timestamp,
+    updated_at timestamp,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(customer) REFERENCES users(ID)
+);
+
+/* Sells_Product Table */
+CREATE TABLE sells_product(
+    ID int(5) not null AUTO_INCREMENT,
+    sale_id int(11),
+    product_id int(11),
+    quantity float(11),
+    PRIMARY KEY(ID),
+    FOREIGN KEY(sale_id) REFERENCES sells(ID),
+    FOREIGN KEY(product_id) REFERENCES products(ID)
+    
+);
+
+/* Purchase Table */
+CREATE TABLE purchase(
+    ID int(5) not null AUTO_INCREMENT,
+    company int(11),
+    purchase_price float(8,2),
+    paid float(8,2),
+    due float(8,2),
+    created_at timestamp,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(company) REFERENCES company(ID)
+);
+
+/* Purchase Products Table*/
+CREATE TABLE purchase_product(
+    ID int(5) not null AUTO_INCREMENT,
+    purchase_id int(11),
+    product_id int(11),
+    quantity float(11),
+    created_at timestamp,
+    updated_at timestamp,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(purchase_id) REFERENCES purchase(ID),
+    FOREIGN KEY(product_id) REFERENCES products(ID)
+);
+
+/* Login Attemp Table */
+CREATE TABLE login_attempt(
+    ID int(11) not null AUTO_INCREMENT,
+    userid int(11),
+    ip_address varchar(25) not null,
+    created_at timestamp not null,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(userid) REFERENCES users(ID)
+    
+);
+
+/* Delivery Table */
+CREATE TABLE delivery(
+    ID int(11) not null AUTO_INCREMENT,
+    sale_id int(11),
+    status varchar(50),
+    created_at timestamp,
+    updated timestamp,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(sale_id) REFERENCES sells(ID)
+);
+
+
+/* Offers Table */
+CREATE TABLE offers (
+  ID int(11) NOT NULL auto_increment,
+  name int(11),
+  discount float(8,2),
+  min_quantity float,
+  started_on timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  close_on timestamp,
+  PRIMARY KEY(ID)
+)
+
+/* Offered Product */
+CREATE TABLE offered_product(
+    ID int(11) not null AUTO_INCREMENT,
+    product_id int(11),
+    offer_id int(11),
+    created_at timestamp,
+    updated_at timestamp,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(product_id) REFERENCES products(ID),
+    FOREIGN KEY(offer_id) REFERENCES offers(ID)
+);
+

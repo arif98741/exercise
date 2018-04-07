@@ -1,0 +1,54 @@
+/* Studnet Table */
+
+CREATE TABLE student(
+	ID int(5) not null AUTO_INCREMENT,
+    name varchar(100),
+    email varchar(100),
+    contact varchar(20),
+    PRIMARY KEY(ID)
+   
+)
+
+
+/* Faculty Table */
+CREATE TABLE faculty(
+	ID int(11) not null AUTO_INCREMENT,
+    name varchar(100),
+    email varchar(100),
+    contact varchar(20),
+    designation varchar(50),
+    salary float(8),
+    PRIMARY KEY(ID)
+   
+)
+
+
+/* Course Table */
+CREATE TABLE course(
+	ID int(11) not null AUTO_INCREMENT,
+    title varchar(100),
+    credit float(2),
+    semester varchar(100),
+    PRIMARY KEY(ID)
+   
+)
+
+
+/* CourseTeacher Table */
+CREATE TABLE courseteacher(
+	FID int(5) not null,
+    CID int(5),
+    FOREIGN KEY(FID) REFERENCES faculty(ID),
+    FOREIGN KEY(CID) REFERENCES course(ID)
+    
+   
+)
+
+/* CourseRegistration Table */
+CREATE TABLE courseregistration(
+	SID int(5) not null,
+    CID int(5),
+    FOREIGN KEY(SID) REFERENCES student(ID),
+    FOREIGN KEY(CID) REFERENCES course(ID)
+    
+)
