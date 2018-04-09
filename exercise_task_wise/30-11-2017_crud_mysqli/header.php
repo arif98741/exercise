@@ -11,4 +11,10 @@
 		<div class="header">
 			<h1>PHP CRUD by MYSQLi</h1>
 			<p>Learn and Enjoy</p>
-		</div>
+			<nav>
+				<ul>
+					<li><a href="">Home</a></li>
+				</ul>
+			</nav>
+		</div><hr>
+		
