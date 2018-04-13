@@ -40,6 +40,7 @@ if(!isset($_SESSION['login']))
                         
 
                         <?php if(Session::get('login') == true): ?>
+                            <li><a href="search.php">Searh User</a></li>
                             <li><a href="profile.php?id=<?php echo $_SESSION['id']; ?>">Profile</a></li>
 
                             <li><a href="?action=logout">Logout</a></li>

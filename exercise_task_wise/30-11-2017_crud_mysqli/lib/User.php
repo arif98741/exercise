@@ -185,6 +185,24 @@ class User {
         }
     }
 
+     //search user
+    public function searchuser($keyword)
+    {
+        $keyword = "%".$keyword."%";
+        
+        $sql = "select * from tbl_user where name LIKE  ? or address LIKE  ? or email LIKE  ? or username LIKE  ?";
+        $stmt = $this->db->pdo->prepare($sql);
+        
+        if($stmt->execute(array($keyword,$keyword,$keyword,$keyword)))
+        {
+             return $stmt->fetchAll(PDO::FETCH_OBJ);
+        }else{
+            return false;
+        }
+    }
+
+
+
 
 }
 
