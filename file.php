@@ -11,4 +11,5 @@
      echo "<pre>";
     var_dump($phpObj);
     echo "</pre>";
+	c url is the basic
 ?>
