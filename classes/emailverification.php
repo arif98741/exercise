@@ -14,11 +14,11 @@ class Manage {
         $this->helpObj = new Helper();
     }
 
-
-    /*
-     * showing applicant list in applicationlist.php 
-     * */
-
+	/*
+	|====================================================================
+	|			showing applicant list in applicationlist.php 
+	|====================================================================
+	*/
     public function addRegistant($data) {
         $fullname = $this->helpObj->validAndEscape($data['fullname']);
         $dob = $this->helpObj->validAndEscape($data['dob']);
@@ -60,14 +60,14 @@ class Manage {
                 }
             }
         }
-
-        
     }
 
-
-    //confirmation email
-    function confirmation($data)
-    {
+	/*
+	|==============================================
+	|				confirmation email
+	|==============================================
+	*/
+    function confirmation($data){
         $email = $this->helpObj->validAndEscape($data['email']);
         $query = "select id from registration where email='$email'";
         $stmt = $this->dbObj->select($query);
@@ -85,14 +85,14 @@ class Manage {
                 }
             }
         }
-
-
     }
 
-
-    //send confirmation mail to user inbox
-    function confirmMail($email,$confirm_code)
-    {
+	/*
+	|=======================================================
+	|			send confirmation mail to user inbox
+	|=======================================================
+	*/
+    function confirmMail($email,$confirm_code){
                 // Multiple recipients
         $to = $email; // note the comma
 
@@ -122,10 +122,14 @@ class Manage {
             return false;
         }
     }
-
-    //update confirmation mail 
-    function updateConfirmation($token) //update token and registration pending
-    {
+	
+	
+	/*
+	|==================================================
+	|				update confirmation mail
+	|==================================================
+	*/
+    function updateConfirmation($token) { //update token and registration pending
          $token = $this->helpObj->validAndEscape($token);
          $stmt1 = $this->dbObj->update("update confirmation set status='clicked' where confirm_code='$token'");
          $stmt2 = $this->dbObj->select("select registant_id from confirmation where confirm_code='$token'");
@@ -135,30 +139,34 @@ class Manage {
          }
     }
 
-
-    //random string
+	/*
+	|=================================================
+	|				random string
+	|==================================================
+	*/
     function RandomString($length) {
         $keys = array_merge(range(0,9), range('a', 'z'));
-
         $key = "";
         for($i=0; $i < $length; $i++) {
             $key .= $keys[mt_rand(0, count($keys) - 1)];
         }
         return $key;
     }
-
-    /*
-    @ add payment in payment.php
-    @ action index.php
-    @method post
-    */
-    function addPayment($data)
-    {
+	
+	/*
+	|==================================================
+	|					add payment
+	|==================================================
+    | add payment in payment.php
+    | action index.php
+    | method post
+	*/
+    
+    function addPayment($data){
         $registant_id = $this->helpObj->validAndEscape($data['registant_id']);
         $method = $this->helpObj->validAndEscape($data['method']);
         $amount = $this->helpObj->validAndEscape($data['amount']);
         $transaction_id = $this->helpObj->validAndEscape($data['transaction_id']);
-
         $checkquery = "select * from ledger where method='$method' and transaction_id='$transaction_id'";
         $checkstmt = $this->dbObj->link->query($checkquery);
         if ($checkstmt) {
@@ -175,19 +183,16 @@ class Manage {
                 }
             }
         }
-
-
-        
     }
-
-
-    /*
-    @ show registant in pending.php
-    @ table = ledger
-    */
-    function showPendingRegistant()
-    {
-
+	
+	/*
+	|==================================================
+	|				add payment
+	|==================================================
+    | @show registant in pending.php
+    | @table = ledger
+	*/
+    function showPendingRegistant(){
         $query = "select * from ledger order by serial desc";
         $stmt = $this->dbObj->link->query($query);
         if ($stmt) {
@@ -195,8 +200,6 @@ class Manage {
         }else{
             return false;
         }
-
     }
-
 
 }
