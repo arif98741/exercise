@@ -1,0 +1,9 @@
+a.) select country from Group where points = (select max(points) from group)
+
+b.) select name from Teams join Result on Teams.name  = Result.team having count(select team from Result where result='defeated') >=1
+
+c.) select name from Teams t join Group g on t.group = g.group where g.noOfvictory >=1
+
+d.) select name from match m join Result r on m.name = r.match join Teams t on r.team = t.name join Group g on t.group = g.group where t.name = "Spain" and g.group = "A"
+
+e.) select name from Teams t join Group g on t.group = g.group where points=(select max(points) from Group) group by noOfvictory
