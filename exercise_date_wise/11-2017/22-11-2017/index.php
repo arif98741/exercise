@@ -16,10 +16,14 @@
 		
 	</script>
 	<script>
-		$(document).ready(function($) {
+		$(document).ready(function() {
 
 			var name = "Ariful+ Islam";
-			console.log(name.substring(1,7));
+			//console.log(name.substring(1,7));
+			$('#btn').click(function () {
+				console.log('yes i am clicked by button');
+			});
+
 
 		});
 	</script>
