@@ -1,0 +1,12 @@
+.part:hover{
+	opacity: .6;
+	transition: .5s;
+	cursor: pointer;
+}
+img{
+	width: 50%;
+	height: 50%;
+}
+a{
+	text-decoration: none !important;
+}

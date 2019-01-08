@@ -1,0 +1,117 @@
+/*User Role Table */
+CREATE TABLE userrole(
+    ID int(5),
+    name varchar(50),
+    PRIMARY KEY(ID)
+    
+);
+
+
+/* Users Table */
+CREATE TABLE users(
+	ID int(5) not null AUTO_INCREMENT,
+    name varchar(100),
+    email varchar(100),
+    password varchar(32),
+    contact varchar(20),
+    userrole int(5),
+    PRIMARY KEY(ID),
+    FOREIGN KEY(userrole) REFERENCES userrole(ID)
+   
+);
+
+
+/* Category Table */
+CREATE TABLE category(
+	ID int(5) not null AUTO_INCREMENT,
+    name varchar(100),
+    created_at timestamp not null,
+    updated_at timestamp,
+    PRIMARY KEY(ID)
+   
+);
+
+
+/* Posts Table */
+CREATE TABLE posts(
+	ID int(5) not null AUTO_INCREMENT,
+    title varchar(100),
+    body text(5000),
+    category int(11),
+    userid int(11),
+    slug varchar(255),
+    created_at timestamp not null,
+    updated_at timestamp,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(category) REFERENCES category(ID),
+    FOREIGN KEY(userid) REFERENCES users(ID)
+    
+   
+);
+
+
+/* Tags Table */
+CREATE TABLE tags(
+   	ID int(11) not null AUTO_INCREMENT,
+    postid int(11),
+    tagname varchar(100),
+    created_at timestamp not null,
+    updated_at timestamp,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(postid) REFERENCES posts(ID)
+    
+);
+
+
+/* Featured Post Table */
+CREATE TABLE featured_post(
+   	ID int(11) not null AUTO_INCREMENT,
+    postid int(11),
+    updated_at timestamp,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(postid) REFERENCES posts(ID)
+    
+);
+
+
+/* Comments Table */
+CREATE TABLE comments(
+   	ID int(11) not null AUTO_INCREMENT,
+    body varchar(255),
+    userid int(11),
+    postid int(11),
+    created_at timestamp not null,
+    updated_at timestamp,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(userid) REFERENCES users(ID),
+    FOREIGN KEY(postid) REFERENCES posts(ID)
+    
+);
+
+
+/* Comments Reply */
+CREATE TABLE comments_reply(
+   	ID int(11) not null AUTO_INCREMENT,
+    body varchar(255),
+    userid int(11),
+    commentid int(11),
+    created_at timestamp not null,
+    updated_at timestamp,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(userid) REFERENCES users(ID),
+    FOREIGN KEY(commentid) REFERENCES comments(ID)
+    
+);
+
+
+/* Login Attempt Table */
+CREATE TABLE login_attempt(
+   	ID int(11) not null AUTO_INCREMENT,
+    userid int(11),
+    ip_address varchar(25) not null,
+    created_at timestamp not null,
+    PRIMARY KEY(ID),
+    FOREIGN KEY(userid) REFERENCES users(ID)
+    
+);
+

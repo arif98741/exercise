@@ -1,0 +1,4 @@
+
+SET @num := 0;
+UPDATE tbl_invoice_products SET serial_no = @num :=(@num +1);
+ALTER TABLE tbl_invoice_products AUTO_INCREMENT = 1;

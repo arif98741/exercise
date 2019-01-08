@@ -1,0 +1,16 @@
+link https://git-lfs.github.com/
+
+download lfs and install
+git lfs install
+git init
+git lfs track ".mp4"
+git lfs track ".mp3"
+git lfs track ".psd"
+git add .
+git add .gitattributes
+git config lfs.https://github.com/arif98741/lfs.git/info/lfs.locksverify false
+git commit -m "Add design file"
+git push origin master
+
+
+
