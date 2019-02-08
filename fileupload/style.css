@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+
+}
+.wrapper{
+	width: 80%;
+	margin: 30px auto;
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.header{
+	height: 60px;
+	background: linear-gradient(to right, #d7d7d7, #6D6E6A);
+}
+.header h2{
+	text-align: center;
+	padding: 10px 0px;
+}
+.content{
+	min-height: 400px;
+	margin: 0 auto;
+	background: #d7d7d7;
+	overflow: hidden;
+}
+.upload-logo{
+	font-size: 80px;
+	margin: 0 auto;
+	color: #7B76E8;
+}
+form{
+	width: 98%;
+	margin: 0 auto;
+}
+
+form p{
+	margin: 2px;
+	padding: 2px 0px;
+}
+input[type=text]{
+	width: 400px;
+	height: 40px;
+	padding: 3px 10px;
+}
+
+input[type=file]{
+	width: 400px;
+	height: 40px;
+	padding: 3px 10px;
+	margin-top: 10px;
+	outline: line;
+}
+
+input[type=submit]{
+	width: 200px;
+	height: 40px;
+	padding: 3px 10px;
+	margin-top: 10px;
+	outline: line;
+	background-image: linear-gradient(to right, #d7d7d7, #fff);
+	outline: none;
+	cursor: pointer;
+}
+
+
+.error{
+	color: red;
+	font-size: 17px;
+	padding: 5px 0px;
+}
+
+
+.success{
+	color: green;
+	font-size: 17px;
+	padding: 5px 0px;
+}
+
+.footer{
+	height: 60px;
+	background: linear-gradient(to right, #d7d7d7, #6D6E6A);
+}
+.footer h2{
+	text-align: center;
+	padding: 10px 0px;
+}
