@@ -1,0 +1,151 @@
+<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			margin: 0 ;
+			padding: 0;
+			font-family: 'Roboto', sans-serif;
+
+		}
+		.wrapper{
+			width: 90%;
+			margin: 20px auto;
+		}
+		.header,.footer{
+			height: 60px;
+			background: linear-gradient(to right,#ddd,green);
+			text-align: center;
+		}
+
+		.header h2{
+			font-weight: 700;
+			padding: 10px 20px;
+			color: #fff;
+		}
+		.content{
+			margin: 20px auto;
+			min-height: 400px;
+		}
+
+		.content p{
+			margin-top: 20px;
+
+		}
+
+		/*content navigation*/
+		nav{
+			width: 100%;
+		}
+		nav ul{
+			list-style: none;
+		}
+		nav ul li{
+			float: left;
+			padding: 10px 10px;
+		}
+
+		nav ul li:hover a{
+			font-size: 18px;
+			text-decoration: underline;
+		}
+
+		nav ul li a{
+			text-decoration: none;
+			font-size: 18px;
+		}
+
+		/*table */
+		.content table{
+			width: 100%;
+			border-collapse: collapse;
+			border-radius: 1px solid #000;
+		}
+
+		.content table tr{
+			border: 1px solid #000;
+		}
+
+		.content table tr:nth-child(2n+2){
+			background: #D2D8D2;
+		}
+
+		.content table th, .content table td{
+			padding: 8px;
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		form{
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		form p
+		{
+			margin: 0px auto;
+		}
+
+		input[type="text"],input[type="password"]
+		{
+			margin-top: 10px;
+			width: 400px;
+			height: 30px;
+		}
+
+		input[type="submit"]
+		{
+			margin-top: 10px;
+			background: linear-gradient(to right, #ddd, #e5e5e5);
+			width: 80px;
+			height: 30px;
+			outline: none;
+		}
+
+		/*profile*/
+		.profile-left{
+			float: left;
+			width: 30%;
+		}
+
+		.profile-left img{
+			width: 250px;
+			height: 250px;
+			border-radius: 200px;
+		}
+		.profile-right{
+			float: right;
+			width: 68%;
+			text-align: left;
+		}
+
+		.error{
+			color: red;
+			font-size: 18px;
+			font-weight: 700;
+			padding: 15px 10px;
+			margin-top: 5px;
+			background: #ddd;
+		}
+
+		.success{
+			color: green;
+			font-size: 18px;
+			font-weight: 700;
+			padding: 15px 10px;
+			margin-top: 5px;
+			background: #ddd;
+		}
+
+		.active{
+			font-weight: 700;
+			font-size: 20px;
+		}
+
+		
+		.footer  h2{
+			padding: 10px 0px;
+			color: #fff;
+		}
+	</style>
