@@ -1,0 +1,24 @@
+{
+  "name": "crudmon",
+  "version": "1.0.0",
+  "description": "Codemon is a html template for exercising. This template can be easily used for php, angular, jsp etc. This is a starting. This template is under development. More updates are coming soon. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arif98741/crudmon.git"
+  },
+  "keywords": [
+    "crudmon",
+    "crud",
+    "template"
+  ],
+  "author": "Ariful Islam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arif98741/crudmon/issues"
+  },
+  "homepage": "https://github.com/arif98741/crudmon#readme"
+}
